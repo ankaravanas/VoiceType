@@ -108,6 +108,19 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [platform, setPlatform] = useState<'mac' | 'windows' | 'other'>('mac');
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
+
+  // Pricing (yearly = 10 months price, 2 months free)
+  const pricing = {
+    pro: {
+      monthly: 10,
+      yearly: 100, // $10 x 10 months
+    },
+    creator: {
+      monthly: 15,
+      yearly: 150, // $15 x 10 months
+    },
+  };
 
   // Detect user's operating system
   useEffect(() => {
@@ -509,6 +522,39 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#0E2E28' }}>
               Start Free. Upgrade When You&apos;re Ready.
             </h2>
+
+            {/* Billing Toggle */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <span
+                className="text-sm font-medium cursor-pointer transition-colors"
+                style={{ color: billingPeriod === 'monthly' ? '#0E2E28' : '#6E7C87' }}
+                onClick={() => setBillingPeriod('monthly')}
+              >
+                Monthly
+              </span>
+              <button
+                onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'yearly' : 'monthly')}
+                className="relative w-14 h-8 rounded-full transition-colors"
+                style={{ backgroundColor: billingPeriod === 'yearly' ? '#CDFA8A' : '#E5E9EB' }}
+              >
+                <span
+                  className="absolute top-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform"
+                  style={{
+                    transform: billingPeriod === 'yearly' ? 'translateX(28px)' : 'translateX(4px)',
+                  }}
+                />
+              </button>
+              <span
+                className="text-sm font-medium cursor-pointer transition-colors flex items-center gap-2"
+                style={{ color: billingPeriod === 'yearly' ? '#0E2E28' : '#6E7C87' }}
+                onClick={() => setBillingPeriod('yearly')}
+              >
+                Yearly
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}>
+                  2 months free
+                </span>
+              </span>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
@@ -545,7 +591,12 @@ export default function Home() {
                 Most Popular
               </div>
               <p className="font-medium mb-2 text-sm sm:text-base" style={{ color: 'rgba(255,255,255,0.6)' }}>Pro</p>
-              <p className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">$9.99<span className="text-base sm:text-lg font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>/month</span></p>
+              <p className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+                ${billingPeriod === 'monthly' ? pricing.pro.monthly : pricing.pro.yearly}
+                <span className="text-base sm:text-lg font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                  /{billingPeriod === 'monthly' ? 'month' : 'year'}
+                </span>
+              </p>
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: 'rgba(255,255,255,0.8)' }}>
                   <CheckIcon />
@@ -576,7 +627,12 @@ export default function Home() {
             {/* Creator Tier */}
             <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8" style={{ borderWidth: '1px', borderColor: '#E5E9EB' }}>
               <p className="font-medium mb-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>Creator</p>
-              <p className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6" style={{ color: '#0E2E28' }}>$14.99<span className="text-base sm:text-lg font-normal" style={{ color: '#6E7C87' }}>/month</span></p>
+              <p className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6" style={{ color: '#0E2E28' }}>
+                ${billingPeriod === 'monthly' ? pricing.creator.monthly : pricing.creator.yearly}
+                <span className="text-base sm:text-lg font-normal" style={{ color: '#6E7C87' }}>
+                  /{billingPeriod === 'monthly' ? 'month' : 'year'}
+                </span>
+              </p>
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
                   <CheckIcon />
