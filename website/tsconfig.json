@@ -31,5 +31,5 @@
     "*.ts",
     "*.mts"
   ],
-  "exclude": ["node_modules", "videos"]
+  "exclude": ["node_modules"]
 }

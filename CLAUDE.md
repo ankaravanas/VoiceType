@@ -133,7 +133,6 @@ The `website/` folder contains a Next.js 16 website for **VoiceType** — an AI 
 - **Styling**: Tailwind CSS v4 with CSS custom properties
 - **Animations**: Motion for React (v12+)
 - **Fonts**: Archivo (headings), Inter Tight (body)
-- **Videos**: Remotion (in `videos/` subfolder)
 
 ### Motion Design System
 The landing page uses Motion for React for scroll-triggered animations and micro-interactions.
@@ -203,17 +202,6 @@ website/src/
 | Free | $0 | $0 | 5K words/week, 5-min audio |
 | Pro | $10 | $100 | Unlimited, 30-min audio, priority |
 | Agency | $15 | $150 | 10 team members, 60-min audio, admin dashboard |
-
-### Remotion Videos
-Located in `website/videos/`. Contains animated video compositions:
-- `HeroVideo` - Hero section animation
-- `StatsVideo` - Animated statistics
-- `TestimonialVideo` - Testimonial animations
-
-To run Remotion Studio:
-```bash
-cd website/videos && npm run dev
-```
 
 ### Contact
 - Email: hello@wedohype.com
