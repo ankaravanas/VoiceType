@@ -208,7 +208,7 @@ export default function Home() {
               Stop Typing.<br />Start Speaking.<br />Get More Done.
             </h1>
             <p className="text-lg sm:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto px-4" style={{ color: '#6E7C87' }}>
-              Dictate anywhere on your Mac. AI cleans up your words instantly. No more slow typing, no more editing raw transcripts.
+              Dictate anywhere, in any app. AI cleans up your words instantly. No more slow typing, no more editing raw transcripts.
             </p>
 
             {/* CTA */}
@@ -301,7 +301,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" style={{ color: '#0E2E28' }}>Real-Time Dictation</h3>
               <p className="mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
-                Speak naturally. Watch your words appear instantly, cleaned and formatted. Works in any app on your Mac.
+                Speak naturally. Watch your words appear instantly, cleaned and formatted. Works in any app on your computer.
               </p>
               <a href="#" className="font-medium transition-colors inline-flex items-center gap-1 text-sm sm:text-base" style={{ color: '#0E2E28' }}>
                 See it in action <ArrowRightIcon />
@@ -422,7 +422,7 @@ export default function Home() {
               <span className="text-4xl sm:text-5xl font-bold" style={{ color: '#CDFA8A' }}>01</span>
               <h3 className="text-xl sm:text-2xl font-bold mt-3 sm:mt-4 mb-2 sm:mb-3" style={{ color: '#0E2E28' }}>Activate Anywhere</h3>
               <p className="leading-relaxed text-sm sm:text-base" style={{ color: '#6E7C87' }}>
-                Press your hotkey in any app. Email, Slack, Notion, your code editor. VoiceType works everywhere on Mac.
+                Press your hotkey in any app. Email, Slack, Notion, your code editor. VoiceType works everywhere.
               </p>
             </div>
 
@@ -681,7 +681,7 @@ export default function Home() {
             />
             <FAQItem
               question="Does it work in every app?"
-              answer="Yes. Any text field on your Mac. Email clients, Slack, Notion, VS Code, Google Docs, your terminal. If you can type there, you can dictate there."
+              answer="Yes. Any text field on your computer. Email clients, Slack, Notion, VS Code, Google Docs, your terminal. If you can type there, you can dictate there."
             />
             <FAQItem
               question="What languages do you support?"
