@@ -203,7 +203,7 @@ export default function Home() {
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
-            <p className="font-medium mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#0E2E28' }}>AI Voice Dictation for Mac</p>
+            <p className="font-medium mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#0E2E28' }}>AI Voice Dictation for Professionals</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6" style={{ color: '#0E2E28', lineHeight: '1.1' }}>
               Stop Typing.<br />Start Speaking.<br />Get More Done.
             </h1>
