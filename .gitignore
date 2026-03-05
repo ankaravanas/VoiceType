@@ -40,10 +40,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# Remotion
-website/videos/out/
-videos/out
-
 # Vercel
 .vercel
 
