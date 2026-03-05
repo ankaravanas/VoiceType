@@ -116,7 +116,7 @@ export default function Home() {
       monthly: 10,
       yearly: 100, // $10 x 10 months
     },
-    creator: {
+    agency: {
       monthly: 15,
       yearly: 150, // $15 x 10 months
     },
@@ -211,8 +211,8 @@ export default function Home() {
               Dictate anywhere on your Mac. AI cleans up your words instantly. No more slow typing, no more editing raw transcripts.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* CTA */}
+            <div className="flex items-center justify-center">
               <a
                 href="#download"
                 className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-semibold transition-colors flex items-center justify-center gap-2"
@@ -221,9 +221,6 @@ export default function Home() {
                 {platform === 'windows' ? 'Download for Windows' : 'Download for Mac'}
                 <ArrowRightIcon />
               </a>
-              <button className="w-14 h-14 rounded-full flex items-center justify-center text-white transition-colors flex-shrink-0" style={{ backgroundColor: '#0E2E28' }}>
-                <PlayIcon />
-              </button>
             </div>
           </div>
 
@@ -624,11 +621,11 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Creator Tier */}
+            {/* Agency Tier */}
             <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8" style={{ borderWidth: '1px', borderColor: '#E5E9EB' }}>
-              <p className="font-medium mb-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>Creator</p>
+              <p className="font-medium mb-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>Agency</p>
               <p className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6" style={{ color: '#0E2E28' }}>
-                ${billingPeriod === 'monthly' ? pricing.creator.monthly : pricing.creator.yearly}
+                ${billingPeriod === 'monthly' ? pricing.agency.monthly : pricing.agency.yearly}
                 <span className="text-base sm:text-lg font-normal" style={{ color: '#6E7C87' }}>
                   /{billingPeriod === 'monthly' ? 'month' : 'year'}
                 </span>
@@ -640,15 +637,15 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
                   <CheckIcon />
+                  Up to 10 team members
+                </li>
+                <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
+                  <CheckIcon />
+                  Team admin dashboard
+                </li>
+                <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
+                  <CheckIcon />
                   60-min audio files
-                </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
-                  <CheckIcon />
-                  Batch upload
-                </li>
-                <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
-                  <CheckIcon />
-                  Export formats
                 </li>
                 <li className="flex items-center gap-2 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
                   <CheckIcon />
@@ -656,7 +653,7 @@ export default function Home() {
                 </li>
               </ul>
               <a href="#" className="block w-full py-3 text-center rounded-full font-medium transition-colors text-sm sm:text-base" style={{ borderWidth: '1px', borderColor: '#E5E9EB', color: '#0E2E28' }}>
-                Go Creator
+                Start Agency Plan
               </a>
             </div>
           </div>
