@@ -406,6 +406,110 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <p className="font-medium mb-2 sm:mb-3 text-sm sm:text-base" style={{ color: '#0E2E28' }}>Trusted by Professionals</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{ color: '#0E2E28' }}>
+              Real Results from Real Users
+            </h2>
+          </div>
+
+          {/* Impact Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+            <div className="text-center p-4 sm:p-6 rounded-xl" style={{ backgroundColor: 'rgba(205,250,138,0.15)' }}>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1" style={{ color: '#0E2E28' }}>2.5h</p>
+              <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>Saved per day</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-xl" style={{ backgroundColor: 'rgba(205,250,138,0.15)' }}>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1" style={{ color: '#0E2E28' }}>98%</p>
+              <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>Accuracy rate</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-xl" style={{ backgroundColor: 'rgba(205,250,138,0.15)' }}>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1" style={{ color: '#0E2E28' }}>50K+</p>
+              <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>Active users</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-xl" style={{ backgroundColor: 'rgba(205,250,138,0.15)' }}>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1" style={{ color: '#0E2E28' }}>4.9★</p>
+              <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>User rating</p>
+            </div>
+          </div>
+
+          {/* Testimonial Cards */}
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            {/* Testimonial 1 */}
+            <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: '#0E2E28' }}>
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5" fill="#CDFA8A" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-white text-lg mb-6 leading-relaxed">
+                &ldquo;I write 10,000+ words daily for my clients. VoiceType cut my writing time in half. The AI cleanup is incredible — no more editing filler words.&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}>
+                  SK
+                </div>
+                <div>
+                  <p className="text-white font-medium">Sarah Kim</p>
+                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Content Strategist</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="rounded-2xl p-6 sm:p-8 bg-white" style={{ borderWidth: '1px', borderColor: '#E5E9EB' }}>
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5" fill="#CDFA8A" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-lg mb-6 leading-relaxed" style={{ color: '#353535' }}>
+                &ldquo;As a developer, I use VoiceType for documentation, Slack messages, and even code comments. It&apos;s 3x faster than typing and the accuracy is spot-on.&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#0E2E28', color: '#CDFA8A' }}>
+                  MR
+                </div>
+                <div>
+                  <p className="font-medium" style={{ color: '#0E2E28' }}>Marcus Rodriguez</p>
+                  <p className="text-sm" style={{ color: '#6E7C87' }}>Senior Developer</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: '#CDFA8A' }}>
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5" fill="#0E2E28" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-lg mb-6 leading-relaxed" style={{ color: '#0E2E28' }}>
+                &ldquo;Our whole agency switched to VoiceType. 10 team members, all saving 2+ hours daily. The ROI paid for itself in the first week.&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#0E2E28', color: '#CDFA8A' }}>
+                  JL
+                </div>
+                <div>
+                  <p className="font-medium" style={{ color: '#0E2E28' }}>Jennifer Lee</p>
+                  <p className="text-sm" style={{ color: 'rgba(14,46,40,0.7)' }}>Agency Owner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
       <section id="how-it-works" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
