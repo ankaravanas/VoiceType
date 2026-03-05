@@ -534,13 +534,13 @@ export default function Home() {
               </span>
               <button
                 onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'yearly' : 'monthly')}
-                className="relative w-14 h-8 rounded-full transition-colors"
+                className="relative w-12 h-7 rounded-full transition-colors"
                 style={{ backgroundColor: billingPeriod === 'yearly' ? '#CDFA8A' : '#E5E9EB' }}
               >
                 <span
-                  className="absolute top-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform"
+                  className="absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-md transition-all duration-200"
                   style={{
-                    transform: billingPeriod === 'yearly' ? 'translateX(28px)' : 'translateX(4px)',
+                    left: billingPeriod === 'yearly' ? 'calc(100% - 24px)' : '4px',
                   }}
                 />
               </button>
