@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Icons as simple SVG components
 const MicrophoneIcon = () => (
@@ -107,6 +107,19 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [platform, setPlatform] = useState<'mac' | 'windows' | 'other'>('mac');
+
+  // Detect user's operating system
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes('win')) {
+      setPlatform('windows');
+    } else if (userAgent.includes('mac')) {
+      setPlatform('mac');
+    } else {
+      setPlatform('other');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F4F9F8' }}>
@@ -178,7 +191,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
             <p className="font-medium mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#0E2E28' }}>AI Voice Dictation for Mac</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6" style={{ color: '#0E2E28' }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6" style={{ color: '#0E2E28', lineHeight: '1.1' }}>
               Stop Typing.<br />Start Speaking.<br />Get More Done.
             </h1>
             <p className="text-lg sm:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto px-4" style={{ color: '#6E7C87' }}>
@@ -192,7 +205,7 @@ export default function Home() {
                 className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-semibold transition-colors flex items-center justify-center gap-2"
                 style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
               >
-                Download Free
+                {platform === 'windows' ? 'Download for Windows' : 'Download for Mac'}
                 <ArrowRightIcon />
               </a>
               <button className="w-14 h-14 rounded-full flex items-center justify-center text-white transition-colors flex-shrink-0" style={{ backgroundColor: '#0E2E28' }}>
@@ -659,15 +672,8 @@ export default function Home() {
                 className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
                 style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
               >
-                Download for Mac
+                {platform === 'windows' ? 'Download for Windows' : 'Download for Mac'}
                 <ArrowRightIcon />
-              </a>
-              <a
-                href="#"
-                className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
-                style={{ borderWidth: '1px', borderColor: 'rgba(255,255,255,0.3)' }}
-              >
-                Join Windows Waitlist
               </a>
             </div>
           </div>
