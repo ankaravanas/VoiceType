@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- VoiceType Logo: Abstract V formed by sound waves -->
+
+  <!-- Background circle -->
+  <g id="background">
+    <circle cx="256" cy="256" r="240" fill="#0E2E28"/>
+  </g>
+
+  <!-- Main V shape formed by converging sound wave bars -->
+  <g id="voice-v">
+    <!-- Left side of V - descending sound bars -->
+    <g id="left-waves">
+      <!-- Outer left wave -->
+      <rect x="72" y="120" width="24" height="80" rx="12" fill="#CDFA8A"/>
+      <!-- Mid-outer left wave -->
+      <rect x="112" y="100" width="24" height="120" rx="12" fill="#CDFA8A"/>
+      <!-- Mid left wave -->
+      <rect x="152" y="80" width="24" height="160" rx="12" fill="#CDFA8A"/>
+      <!-- Inner left wave -->
+      <rect x="192" y="100" width="24" height="200" rx="12" fill="#CDFA8A"/>
+    </g>
+
+    <!-- Right side of V - descending sound bars (mirrored) -->
+    <g id="right-waves">
+      <!-- Inner right wave -->
+      <rect x="296" y="100" width="24" height="200" rx="12" fill="#CDFA8A"/>
+      <!-- Mid right wave -->
+      <rect x="336" y="80" width="24" height="160" rx="12" fill="#CDFA8A"/>
+      <!-- Mid-outer right wave -->
+      <rect x="376" y="100" width="24" height="120" rx="12" fill="#CDFA8A"/>
+      <!-- Outer right wave -->
+      <rect x="416" y="120" width="24" height="80" rx="12" fill="#CDFA8A"/>
+    </g>
+
+    <!-- Center convergence point - the bottom of the V -->
+    <g id="v-apex">
+      <!-- Central tall bar representing voice peak and V bottom -->
+      <rect x="244" y="140" width="24" height="240" rx="12" fill="#CDFA8A"/>
+    </g>
+  </g>
+
+  <!-- Subtle audio pulse rings at bottom to reinforce voice concept -->
+  <g id="pulse-accent">
+    <path d="M196 420 Q256 380 316 420" stroke="#CDFA8A" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M166 450 Q256 400 346 450" stroke="#CDFA8A" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

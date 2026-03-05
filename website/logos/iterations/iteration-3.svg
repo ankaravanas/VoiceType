@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Speakly Logo: Soundwave bars flowing into elegant text cursor -->
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#0E2E28"/>
+
+  <!-- Soundwave bars - progressively taller as they approach the cursor -->
+  <g id="soundwave-bars" fill="#CDFA8A">
+    <!-- Bar 1 - shortest, leftmost -->
+    <rect x="100" y="228" width="12" height="56" rx="6"/>
+
+    <!-- Bar 2 - slightly taller -->
+    <rect x="130" y="212" width="14" height="88" rx="7"/>
+
+    <!-- Bar 3 - medium height -->
+    <rect x="164" y="192" width="16" height="128" rx="8"/>
+
+    <!-- Bar 4 - taller -->
+    <rect x="200" y="168" width="18" height="176" rx="9"/>
+
+    <!-- Bar 5 - tallest bar before cursor, transitional -->
+    <rect x="240" y="144" width="20" height="224" rx="10"/>
+  </g>
+
+  <!-- Elegant Text Cursor - the hero element -->
+  <g id="text-cursor" fill="#CDFA8A">
+    <!-- Main vertical stroke - tall, thin, and elegant -->
+    <rect x="308" y="92" width="8" height="328" rx="1"/>
+
+    <!-- Top serif - elegant thin bracket style -->
+    <path d="M278 92
+             Q278 86, 284 86
+             L340 86
+             Q346 86, 346 92
+             L346 98
+             Q346 102, 342 102
+             L282 102
+             Q278 102, 278 98
+             Z"/>
+
+    <!-- Top serif inner detail - creates refined double-line effect -->
+    <rect x="278" y="106" width="68" height="4" rx="2"/>
+
+    <!-- Bottom serif - elegant thin bracket style -->
+    <path d="M278 414
+             Q278 410, 282 410
+             L342 410
+             Q346 410, 346 414
+             L346 420
+             Q346 426, 340 426
+             L284 426
+             Q278 426, 278 420
+             Z"/>
+
+    <!-- Bottom serif inner detail -->
+    <rect x="278" y="402" width="68" height="4" rx="2"/>
+
+    <!-- Delicate end caps on serifs -->
+    <rect x="270" y="88" width="6" height="16" rx="3"/>
+    <rect x="348" y="88" width="6" height="16" rx="3"/>
+    <rect x="270" y="408" width="6" height="16" rx="3"/>
+    <rect x="348" y="408" width="6" height="16" rx="3"/>
+  </g>
+
+  <!-- Flow particles - subtle connection between soundwave and cursor -->
+  <g id="flow-particles" fill="#CDFA8A">
+    <circle cx="272" cy="170" r="3" opacity="0.5"/>
+    <circle cx="276" cy="220" r="2.5" opacity="0.6"/>
+    <circle cx="274" cy="270" r="2.5" opacity="0.55"/>
+    <circle cx="278" cy="320" r="3" opacity="0.5"/>
+    <circle cx="275" cy="370" r="2" opacity="0.45"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "name": "voicetype-videos",
+  "version": "1.0.0",
+  "description": "Animated videos for VoiceType landing page",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion render HeroVideo out/hero.mp4",
+    "build:stats": "remotion render StatsVideo out/stats.mp4",
+    "build:testimonial": "remotion render TestimonialVideo out/testimonial.mp4",
+    "build:multilingual": "remotion render MultilingualVideo out/multilingual.mp4",
+    "build:typing": "remotion render TypingVsDictationVideo out/typing-vs-dictation.mp4",
+    "build:audio": "remotion render AudioUploadVideo out/audio-upload.mp4",
+    "build:speed": "remotion render SpeedComparisonVideo out/speed-comparison.mp4",
+    "build:howitworks": "remotion render HowItWorksVideo out/how-it-works.mp4",
+    "build:all": "npm run build && npm run build:stats && npm run build:testimonial && npm run build:multilingual && npm run build:typing && npm run build:audio && npm run build:speed && npm run build:howitworks",
+    "build:sections": "npm run build:multilingual && npm run build:typing && npm run build:audio && npm run build:speed && npm run build:howitworks",
+    "build:gif": "remotion render HeroVideo out/hero.gif --codec=gif"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.434",
+    "@remotion/cli": "^4.0.434",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.434"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

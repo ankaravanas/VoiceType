@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Speakly Logo: Flowing curved waves transforming into text cursor -->
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0E2E28"/>
+
+  <!-- Flowing wave curves transitioning to cursor -->
+  <g id="flowing-waves">
+    <!-- Wave 1 - Outermost, smallest amplitude -->
+    <path d="M60 256
+             Q80 200, 100 256
+             Q120 312, 140 256"
+          stroke="#CDFA8A"
+          stroke-width="16"
+          stroke-linecap="round"
+          fill="none"/>
+
+    <!-- Wave 2 - Growing amplitude -->
+    <path d="M130 256
+             Q155 170, 180 256
+             Q205 342, 230 256"
+          stroke="#CDFA8A"
+          stroke-width="18"
+          stroke-linecap="round"
+          fill="none"/>
+
+    <!-- Wave 3 - Largest amplitude, flows into cursor -->
+    <path d="M215 256
+             Q250 130, 285 256
+             Q320 382, 355 256"
+          stroke="#CDFA8A"
+          stroke-width="20"
+          stroke-linecap="round"
+          fill="none"/>
+  </g>
+
+  <!-- Text cursor - the transformation point -->
+  <g id="cursor">
+    <!-- Cursor stem -->
+    <rect x="340" y="100" width="22" height="312" rx="4" fill="#CDFA8A"/>
+    <!-- Cursor top serif -->
+    <rect x="310" y="100" width="82" height="22" rx="4" fill="#CDFA8A"/>
+    <!-- Cursor bottom serif -->
+    <rect x="310" y="390" width="82" height="22" rx="4" fill="#CDFA8A"/>
+  </g>
+
+  <!-- Trailing energy wisps - fading echoes of the wave -->
+  <g id="trailing-wisps">
+    <path d="M400 256 Q420 220, 440 256 Q460 292, 450 256"
+          stroke="#CDFA8A"
+          stroke-width="12"
+          stroke-linecap="round"
+          fill="none"
+          opacity="0.7"/>
+  </g>
+</svg>
