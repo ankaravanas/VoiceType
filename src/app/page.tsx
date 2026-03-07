@@ -82,6 +82,12 @@ export default function Home() {
   const [platform, setPlatform] = useState<'mac' | 'windows' | 'other'>('mac');
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
 
+  // Download URLs (hosted on BunnyCDN)
+  const downloadUrls = {
+    mac: 'https://liberators.b-cdn.net/VoiceType-1.22.3-arm64.dmg.zip',
+    windows: 'https://liberators.b-cdn.net/VoiceType-Setup-1.22.3.exe.zip',
+  };
+
   // Pricing (yearly = 10 months price, 2 months free)
   const pricing = {
     pro: {
@@ -192,7 +198,8 @@ export default function Home() {
               <TextReveal delay={0.5}>
                 <div className="flex items-center justify-center">
                   <a
-                    href="#download"
+                    href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+                    download
                     className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-semibold transition-colors flex items-center justify-center gap-2"
                     style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
                   >
@@ -721,7 +728,7 @@ export default function Home() {
                       50+ languages
                     </li>
                   </ul>
-                  <a href="#download" className="block w-full py-3 text-center rounded-full font-medium transition-colors text-sm sm:text-base" style={{ borderWidth: '1px', borderColor: '#E5E9EB', color: '#0E2E28' }}>
+                  <a href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac} download className="block w-full py-3 text-center rounded-full font-medium transition-colors text-sm sm:text-base" style={{ borderWidth: '1px', borderColor: '#E5E9EB', color: '#0E2E28' }}>
                     Download Free
                   </a>
                 </div>
@@ -877,7 +884,8 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full md:w-auto">
                   <a
-                    href="#"
+                    href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+                    download
                     className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
                     style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
                   >
