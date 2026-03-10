@@ -84,8 +84,8 @@ export default function Home() {
 
   // Download URLs (hosted on BunnyCDN)
   const downloadUrls = {
-    mac: 'https://liberators.b-cdn.net/VoiceType-1.22.3-arm64.dmg.zip',
-    windows: 'https://liberators.b-cdn.net/VoiceType-Setup-1.22.3.exe.zip',
+    mac: 'https://liberators.b-cdn.net/VoiceType-1.26.0-arm64.dmg.zip',
+    windows: 'https://liberators.b-cdn.net/VoiceType-Setup-1.26.0.exe.zip',
   };
 
   // Pricing (yearly = 10 months price, 2 months free)
