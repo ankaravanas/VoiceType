@@ -103,7 +103,10 @@ export default function Home() {
   // Detect user's operating system
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.includes('win')) {
+    // Check for mobile/tablet first (iOS, Android) before desktop
+    if (userAgent.includes('iphone') || userAgent.includes('ipad') || userAgent.includes('android')) {
+      setPlatform('other');
+    } else if (userAgent.includes('win')) {
       setPlatform('windows');
     } else if (userAgent.includes('mac')) {
       setPlatform('mac');
@@ -203,7 +206,7 @@ export default function Home() {
                     className="w-full sm:w-auto px-8 py-4 rounded-full text-lg font-semibold transition-colors flex items-center justify-center gap-2"
                     style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
                   >
-                    {platform === 'windows' ? 'Download for Windows' : 'Download for Mac'}
+                    {platform === 'windows' ? 'Download for Windows' : platform === 'mac' ? 'Download for Mac' : 'Download Free'}
                     <ArrowRightIcon />
                   </a>
                 </div>
@@ -284,12 +287,9 @@ export default function Home() {
                     <MicrophoneIcon />
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" style={{ color: '#0E2E28' }}>Real-Time Dictation</h3>
-                  <p className="mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
+                  <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>
                     Speak naturally. Watch your words appear instantly, cleaned and formatted. Works in any app on your computer.
                   </p>
-                  <a href="#" className="font-medium transition-colors inline-flex items-center gap-1 text-sm sm:text-base" style={{ color: '#0E2E28' }}>
-                    See it in action <ArrowRightIcon />
-                  </a>
                 </div>
               </StaggerItem>
 
@@ -300,12 +300,9 @@ export default function Home() {
                     <UploadIcon />
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Audio File Upload</h3>
-                  <p className="mb-3 sm:mb-4 opacity-90 text-sm sm:text-base">
+                  <p className="opacity-90 text-sm sm:text-base">
                     Got a voice memo? A meeting recording? Upload it and get a clean transcript in minutes. No competitor offers this.
                   </p>
-                  <a href="#" className="font-medium hover:opacity-80 transition-opacity inline-flex items-center gap-1 text-sm sm:text-base">
-                    Try it free <ArrowRightIcon />
-                  </a>
                 </div>
               </StaggerItem>
 
@@ -316,15 +313,30 @@ export default function Home() {
                     <GlobeIcon />
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" style={{ color: '#0E2E28' }}>Multilingual Support</h3>
-                  <p className="mb-3 sm:mb-4 text-sm sm:text-base" style={{ color: '#6E7C87' }}>
+                  <p className="text-sm sm:text-base" style={{ color: '#6E7C87' }}>
                     Auto-detects your language. Switch between English, Greek, Spanish, or any of 50+ languages mid-sentence.
                   </p>
-                  <a href="#" className="font-medium transition-colors inline-flex items-center gap-1 text-sm sm:text-base" style={{ color: '#0E2E28' }}>
-                    View all languages <ArrowRightIcon />
-                  </a>
                 </div>
               </StaggerItem>
             </StaggerContainer>
+
+            {/* Mobile CTA after features */}
+            <FadeInWhenVisible delay={0.3}>
+              <div className="mt-10 sm:mt-12 text-center">
+                <a
+                  href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+                  download
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-colors"
+                  style={{ backgroundColor: '#0E2E28', color: '#CDFA8A' }}
+                >
+                  Start Speaking Free
+                  <ArrowRightIcon />
+                </a>
+                <p className="mt-3 text-sm" style={{ color: '#6E7C87' }}>
+                  No credit card required
+                </p>
+              </div>
+            </FadeInWhenVisible>
           </div>
         </section>
 
@@ -530,6 +542,21 @@ export default function Home() {
                 </div>
               </StaggerItem>
             </StaggerContainer>
+
+            {/* CTA after testimonials */}
+            <FadeInWhenVisible delay={0.3}>
+              <div className="mt-12 sm:mt-16 text-center">
+                <a
+                  href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+                  download
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-colors"
+                  style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
+                >
+                  Try for Free
+                  <ArrowRightIcon />
+                </a>
+              </div>
+            </FadeInWhenVisible>
           </div>
         </section>
 
@@ -585,6 +612,21 @@ export default function Home() {
                 </div>
               </StaggerItem>
             </StaggerContainer>
+
+            {/* CTA after How It Works */}
+            <FadeInWhenVisible delay={0.3}>
+              <div className="mt-10 sm:mt-12 text-center">
+                <a
+                  href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+                  download
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-colors"
+                  style={{ backgroundColor: '#0E2E28', color: '#CDFA8A' }}
+                >
+                  Start Speaking Now
+                  <ArrowRightIcon />
+                </a>
+              </div>
+            </FadeInWhenVisible>
           </div>
         </section>
 
@@ -889,7 +931,7 @@ export default function Home() {
                     className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
                     style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
                   >
-                    {platform === 'windows' ? 'Download for Windows' : 'Download for Mac'}
+                    {platform === 'windows' ? 'Download for Windows' : platform === 'mac' ? 'Download for Mac' : 'Download Free'}
                     <ArrowRightIcon />
                   </a>
                 </div>
@@ -950,6 +992,22 @@ export default function Home() {
             </div>
           </div>
         </footer>
+
+        {/* Sticky Mobile CTA Bar */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden p-4 border-t" style={{ backgroundColor: '#F4F9F8', borderColor: '#E5E9EB' }}>
+          <a
+            href={platform === 'windows' ? downloadUrls.windows : downloadUrls.mac}
+            download
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-base font-semibold"
+            style={{ backgroundColor: '#CDFA8A', color: '#0E2E28' }}
+          >
+            Try for Free
+            <ArrowRightIcon />
+          </a>
+        </div>
+
+        {/* Spacer for sticky mobile CTA */}
+        <div className="h-20 sm:hidden" />
       </div>
     </PageLoader>
   );
